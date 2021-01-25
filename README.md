@@ -76,8 +76,28 @@ LSTM is Long short-term memory in deep learning and it is used as artificial rec
 
 As a first step we will import the necessary libraries and clean the data. Next step is to define a function to remove stopwords. Stopwords are common words which are used in the text like “the”,” a”, “an” these words mostly occupy 50% of our sentence. We wouldn't want these terms to take up space in our database and take so much time for processing in memory. Stopwords are there for 16 languages in python library so we will use English and remove these words. It is done by taking a review and converting them into lower case and split it and use stemming. This is done using nltk data dictionary library. Stemming is the process of combing similar words to its base or stem and treat them as a single value. So, it reduces space and time. 
 
+Most_used_Words_Review =pd.Series(' '.join(clean_reviewData).lower().split()).value_counts()[:25]
+print (Most_used_Words_Review) 
+
+![](Images/Pic9.png)
+
+
 <h1>KNN</h1>
 
 KNN is used to find clusters of similar users based on common clothes or beauty product ratings and make predictions using the average ratings of top-k nearest neighbors. Collaborative filtering approach builds a model from user’s past behavior like items previously purchased or ratings of those items.
 
 KNN relies on items feature similarity will calculate distance between the target product and every other product in the database and then ranks its distance and returns the top K nearest neighbor products as recommendations. 
+
+we will define a function for word cloud that is a data visualization technique the most frequent words used in the reviews of 0 to 5. 
+
+![](Images/Pic10.png)
+
+![](Images/Pic11.png)
+
+![](Images/Pic12.png)
+
+<h1>Accuracy</h1>
+
+1. KNN achieved a acuuracy of 0.944 with a mean squared error of 0.055
+2. LSTM testing rate was 0.61500 with training on 1500 samples and validating on 500 samples
+
